@@ -1,0 +1,204 @@
+﻿/*滚动条样式*/
+/*.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}*/.scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #e4e0e0;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #2d353c;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+.controlProperty{
+    position:fixed;
+    right:0px;
+    top:0px;
+    width:199px;
+    height:96%;
+    font-size:12px !important;
+}
+.property_info{
+    width:100%;
+    height:95%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.property_btn,.code_btn {
+    position:absolute;
+    bottom:0px;
+}
+.property_btn button,.code_btn button{
+    padding:1px 6px;
+    font-size:12px;
+    background:#242a30;
+    color:#ffffff;
+    border:none;
+}
+.property_btn>.active,.code_btn>.active{
+    padding:1px 6px;
+    font-size:12px;
+    background: #00acac;
+    color: #fff;
+}
+.pageform{
+    padding:10px;
+}
+.pageform label{
+    padding-right:5px;
+    padding-left:0px;
+    color:#fff;
+    text-align:center !important;
+}
+.pageform .control {
+    padding-left:0px;
+    padding-right:0px;
+}
+.pageform .control_input{
+    height:25px;
+    background-color:transparent;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-radius: 0px;
+    font-size:12px;
+    padding:6px;
+    color:#fff;
+}
+.pageform .control_select{
+    height:25px;
+    border-radius: 0px;
+    font-size:12px;
+    padding:2px;
+}
+.pageform .control_input:focus{
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    outline:none;
+}
+.pageform .control_check{
+    height: 15px;
+    text-align: left;
+    margin-top: 8px;
+}
+.editor_container{
+    width:720px;
+    height:465px;
+    margin:0px auto;
+    overflow:hidden;
+}
+/*angularjshtml  begin*/
+.plugin_btn{
+    top:-27px !important;
+    right:-130px !important;
+}
+.angularjs_main{
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 30px 10px 10px;
+    border: 1px solid #2d353c;
+    border-radius: 4px;
+    position: relative;
+    word-wrap: break-word;
+    border-bottom: none;
+}
+.angularjs_code{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:95%;
+    overflow:hidden;
+}
+/*SQLInterface*/
+.sql_main{
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 30px 10px 10px;
+    border: 1px solid #2d353c;
+    border-radius: 4px;
+    position: relative;
+    word-wrap: break-word;
+    border-bottom: none;
+}
+.sql_code{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:95%;
+    overflow:hidden;
+}
+#sql_params{
+    width:50%;
+    float:left;
+}
+#sql_debugger{
+    width:50%;
+    float:left;
+}
+
+
+/*angularjshtml  end*/
+/*sqlanalysis begin*/
+#sqlAnalysis{
+    width:100%;
+    height:60%;
+}
+#sqlResult{
+    height:38%;
+    overflow-y:hidden;
+    overflow-x:auto;
+    background-color:white;
+}
+
+/*sqlanalysis end*/
+/*select样式*/
+option { color:black
+}
+/*apqp begin*/
+#eventList i{
+    color:white;
+}
+.icon_box{
+    padding:5px;
+    text-align:center;
+    width:50px;
+    float:left;
+    cursor:pointer;
+    overflow:hidden;
+}
+.icon_box:hover{
+    background:#fff;
+}
+.icon_box p {
+    color:white;
+}
+.icon_box:hover p {
+    color: black;
+}
+#workEventList a{
+    color:white;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    color: #333 !important;
+    background: #fafafa;
+}
+    /*apqp end*/
