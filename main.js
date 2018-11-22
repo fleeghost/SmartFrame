@@ -9,8 +9,12 @@ const {RewriteUrl} = SelfModules('urlRewriter')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
+//系统内存变量
+let currentUser
+
+
 function createWindow () {
-  //请求拦截事件
+  //请求前事件
   session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
     let originUrl = RewriteUrl(details.url);
     callback({cancel: false, originUrl});
@@ -48,6 +52,8 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+
+  moduleFunction()
 }
 
 // This method will be called when Electron has finished
@@ -72,10 +78,25 @@ app.on('activate', () => {
   }
 })
 
-//页面请求函数
-ipcMain.on('getRootPath',(e, arg)=>{
-    e.returnValue = __dirname
-})
+//模块方法
+let moduleFunction = ()=>{
+  //页面请求函数
+  //获取页面根目录
+  ipcMain.on('getRootPath',(e, arg)=>{
+      e.returnValue = __dirname
+  })
+  //保存用户信息
+  ipcMain.on('getCurrentUser',(e,arg)=>{
+    e.returnValue = currentUser
+  })
+  //设置用户信息
+  ipcMain.on('setCurrentUser',(e,arg)=>{
+    currentUser = arg;
+  })
+  
+}
+
+
 
 
 
