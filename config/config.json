@@ -1,0 +1,17 @@
+{
+    "Db_Connection":{
+        "host":"47.91.250.49",
+        "dialect":"mssql",
+        "port":1433,
+        "pool":{
+            "max": 5, 
+            "min": 0, 
+            "idle": 10000
+        },
+        "dbName":"SmartFrame_Ultimate",
+        "dbAccount":"sa",
+        "dbPassword":"jw!@#456"
+    }
+
+    
+}

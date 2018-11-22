@@ -1,0 +1,18 @@
+{
+  "name": "smartframe_ultimate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^3.0.8"
+  },
+  "dependencies": {
+    "sequelize": "^4.41.2",
+    "tedious": "^3.0.1"
+  }
+}
