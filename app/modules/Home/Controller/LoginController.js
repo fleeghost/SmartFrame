@@ -1,6 +1,6 @@
 const {ipcRenderer} = require('electron')
 const {SystemModules,SelfModules,SelfService} = require(ipcRenderer.sendSync('getRootPath')+'/assembly/RequireHelper.js')
-const service = SelfService('Home','Login')
+const service = SelfService('Home','Base')
 
 $(document).ready(function() {
     App.init();
@@ -35,8 +35,13 @@ function login() {
         layer.alert("请先输入密码");
         return;
     }
-
-
-
-    service.login(username,pwd);
+    service.login(username,pwd,(user)=>{
+        if(user.length==0){
+            layer.alert('用户名或密码错误');
+        }
+        else{
+            //登录成功
+            ipcRenderer.send('setCurrentUser',user[0].dataValues);
+        }
+    });
 }

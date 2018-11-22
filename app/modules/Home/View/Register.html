@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Color Admin | Register Page</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="/app/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/app/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/app/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/app/assets/css/animate.min.css" rel="stylesheet" />
+    <link href="/app/assets/css/style.min.css" rel="stylesheet" />
+    <link href="/app/assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="/app/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <!-- ================== END BASE JS ================== -->
+</head>
+<body class="pace-top bg-white">
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin register -->
+        <div class="register register-with-news-feed">
+            <!-- begin news-feed -->
+            <div class="news-feed">
+                <div class="news-image">
+                    <img src="/app/assets/img/login-bg/bg-8.jpg" alt="" />
+                </div>
+                <div class="news-caption">
+                    <h4 class="caption-title"><i class="fa fa-edit text-success"></i> 拥抱智能开发平台</h4>
+                    <p>
+                        作为一个互联网开发人员, 使用只能开发平台让一切开发变得更简单，更为高效, 您能随意布局您的网页项目，通过拖拽控件生成任何效果的网页，同时也能让你开发App，创建Angularjs等高效简单框架项目.
+                    </p>
+                </div>
+            </div>
+            <!-- end news-feed -->
+            <!-- begin right-content -->
+            <div class="right-content">
+                <!-- begin register-header -->
+                <h1 class="register-header">
+                    注册
+                    <small>免费创建一个智能开发平台账号</small>
+                </h1>
+                <!-- end register-header -->
+                <!-- begin register-content -->
+                <div class="register-content">
+                    <form  class="margin-bottom-0">
+                        <label class="control-label">账号</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">
+                                <input id="username" type="text" class="form-control" placeholder="智能开发平台的凭证" />
+                            </div>
+                        </div>
+                        @*<label class="control-label">微信号</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="用于集成微信企业号" />
+                            </div>
+                        </div>*@
+                        <label class="control-label">密码</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">
+                                <input id="pwd1" type="password" class="form-control" placeholder="Password" />
+                            </div>
+                        </div>
+                        <label class="control-label">重复密码</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">
+                                <input id="pwd2" type="password" class="form-control" placeholder="重新输入密码" />
+                            </div>
+                        </div>
+                        <div class="register-buttons">
+                            <button id="btnRegister" type="button" class="btn btn-primary btn-block btn-lg">注册</button>
+                        </div>
+                        <div class="m-t-20 m-b-40 p-b-40">
+                            已经拥有了账号? 点击 <a href="/app/modules/Home/View/Login.html">此处</a>登录.
+                        </div>
+                    </form>
+                </div>
+                <!-- end register-content -->
+            </div>
+            <!-- end right-content -->
+        </div>
+        <!-- end register -->
+    </div>
+    <!-- end page container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/app/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="/app/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="/app/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="/app/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="/assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="/assets/crossbrowserjs/respond.min.js"></script>
+        <script src="/assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/app/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/app/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="/app/assets/layer/layer.js"></script>
+    <!-- ================== END BASE JS ================== -->
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="/app/assets/js/apps.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+
+    <script>
+		$(document).ready(function() {
+		    App.init();
+		    //注册事件
+		    $("#btnRegister").click(function () {
+		        var username = $("#username").val();
+		        var pwd1 = $("#pwd1").val();
+		        var pwd2 = $("#pwd2").val();
+		        if (username == "") {
+		            layer.alert("请先输入账号");
+		            return;
+		        }
+		        if (pwd1 == "") {
+		            layer.alert("请先输入密码");
+		            return;
+		        }
+		        if (pwd2 == "") {
+		            layer.alert("请先输入重复密码");
+		            return;
+		        }
+		        if (pwd1 != pwd2) {
+		            layer.alert("两次密码不一致");
+		            return;
+		        }
+		        $.post("/Home/Register", {
+		            username: username,
+		            pwd1: pwd1,
+                    pwd2: pwd2
+		        }, function (data) {
+		            if (data.status == 500) {
+		                layer.alert(data.msg);
+		            }
+		            else {
+		                window.location = "/Home/Index";
+		            }
+		        }, "json")
+		    });
+		});
+    </script>
+</body>
+</html>
